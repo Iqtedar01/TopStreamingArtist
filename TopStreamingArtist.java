@@ -1,4 +1,4 @@
-// Iqtedar Alizai TY2 Assignment 1
+//Iqtedar Alizai TY9 Assignment 1
 
 package topstreamingartist;
 import java.io.File;
@@ -33,7 +33,6 @@ public class TopStreamingArtist {
                 
                 // we are using a enhanced for loop which makes it go through our list
                 for(Artist a : lst) {
-                    System.out.println(a);
                     if(a.getName().equals(track[2].replace("\"", ""))) // gets rid of quotation marks in the csv
                     {
                         found = true;
@@ -45,29 +44,34 @@ public class TopStreamingArtist {
                     foundArtist.increment();   // The if else statements makes it where it increments the artist instead of repeating it 
                 } else {
                     lst.add(artist);
-                }
-                // divider 
-                System.out.println("--------------------------------------------------------");
-                System.out.println("Sorting Artist");
-                System.out.println("--------------------------------------------------------");
-                
-                // constructs a list containing Strings 
-                LinkedList<String> linkedlist = new LinkedList<>();
-                
-                // we use another enhance loop to add the artists name to the link list
-                for(Artist a : lst) {
-                    String name = a.getName();
-                    linkedlist.add(name);
-                }
-                
-                // sorts the artists in the linked list 
-                Collections.sort(linkedlist);
-                
-                for(String s : linkedlist) {
-                    System.out.println(s);
                 }    
-             
             }
+            
+            for(Artist a : lst) {
+                System.out.println(a);
+            }    
+            
+             // divider 
+            System.out.println("--------------------------------------------------------");
+            System.out.println("Sorting Artist");
+            System.out.println("--------------------------------------------------------");
+
+            // constructs a list containing Strings 
+            LinkedList<String> linkedlist = new LinkedList<>();
+
+            // we use another enhance loop to add the artists name to the link list
+            for(Artist a : lst) {
+                String name = a.getName();
+                linkedlist.add(name);
+            }
+
+            // sorts the artists in the linked list 
+            Collections.sort(linkedlist);
+
+            for(String s : linkedlist) {
+                System.out.println(s);
+            }
+            
             reader.close(); // closes scanner file 
             
         } catch (IOException e) {  // catches any IO exceptions 
@@ -106,8 +110,4 @@ class Artist {
         return name + " " + numOfTracks;
     }
 
-}
-       
- }
-    
 }
